@@ -46,43 +46,72 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
-
+1.Create a new project in Quartus2 software .
+2.Name the project as uc for upcounter and dc for down counter.
+3.Create a new verilog hdl file in the project file.
+4.Name the module declare as dc and uc for down counter and upcounter.
+5.Within the module declare input and output variables.
+6.Create a loop using if-else with condition parameter as reset.
+7.End the loop.
+8.End the module
 
 
 ### PROGRAM 
-/*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+## UP COUNTER
+```
+module upcounter(clk,q1,q2,q3);
+input clk;
+output reg q1,q2,q3;
+always@(posedge clk)
+begin
+q3 = (q1&q2)^q3;
+q2 = q1^q2;
+q1 = 1^q1;
+end
+endmodule
+```
+## DOWN COUNTER
+```
+module downcounter(clk,q1,q2,q3);
+input clk;
+output reg q1,q2,q3;
+always@(posedge clk)
+begin
+q3 = ((~q1)&(~q2))^q3;
+q2 = (~q1)^q2;
+q1 = 1^q1;
+end
+endmodule
+ ```
+## OUTPUT 
+## STATE TABLE
+## UP COUNTER
+
+![image](https://github.com/Murali-Krishna0/Exp-7-Synchornous-counters-/assets/149054535/24847228-4cf7-4edf-b263-fe775af4ae54)
+
+## DOWN COUNTER
+
+![image](https://github.com/Murali-Krishna0/Exp-7-Synchornous-counters-/assets/149054535/46da488f-3c4c-44d4-bb13-e4d5a9aae29a)
+
+## RTL LOGIC
+## UP COUNTER
 
 
+![image](https://github.com/Murali-Krishna0/Exp-7-Synchornous-counters-/assets/149054535/8e36712d-2f2e-4243-97ad-10e2beab371e)
 
+## DOWN COUNTER
 
-
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
+![image](https://github.com/Murali-Krishna0/Exp-7-Synchornous-counters-/assets/149054535/056158aa-7df7-4afa-9c08-59a26094ac11)
 ### TIMING DIGRAMS FOR COUNTER  
+## UP COUNTER
 
+![image](https://github.com/Murali-Krishna0/Exp-7-Synchornous-counters-/assets/149054535/dd5c62f0-99fc-4d14-9b00-2cc178f3a555)
 
+## DOWNCOUNTER
 
-
-
-### TRUTH TABLE 
-
-
-
-
+![image](https://github.com/Murali-Krishna0/Exp-7-Synchornous-counters-/assets/149054535/6645fca4-19fb-47a2-9225-2a37edd39a7e)
 
 
 ### RESULTS 
+Thus synchornous counters up counter and down counter circuit are studied and the truth table for different logic gates are 
+verified.
